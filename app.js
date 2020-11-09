@@ -1,49 +1,68 @@
 $( document ).ready(function() {
 
     var httpRequest = new XMLHttpRequest();
-    var url = "http://localhost/info2180-lab4/superheroes.php"; 
+    var url = "http://localhost/info2180-lab4/superheroes.php";
+    var result = document.querySelector("#result");
+  
 
     let btn = $("form .btn");
-    btn.click(function() {
 
-        httpRequest.onreadystatechange = doSomething;
+    btn.on('click', function() {
+
+        httpRequest.onreadystatechange = superhero;
         httpRequest.open('GET', url);
         httpRequest.send();
+        
+        }); 
 
-        function doSomething() {
+    function superhero() {
+        if (httpRequest.readyState === XMLHttpRequest.DONE) {
+            if (httpRequest.status === 200) {
+                var response = httpRequest.responseText;
+                //$("#result").append(response);
+                result.innerHTML = response;
+                //alert(response);
+                      
+            } 
+            else {
+                console.log(httpRequest.status)
+                alert('There was a problem with the request.');
+             }
+        }
+    }
+
+});
+
+
+/* window.addEventListener("load", addmessage);
+   
+    function addmessage() {
+
+        var httpRequest = new XMLHttpRequest();
+        var url = "http://localhost/info2180-lab4/superheroes.php";
+        var result = document.querySelector("#result");
+        const btn = document.querySelector("form .btn");
+
+        btn.addEventListener("click", function(event) {
+            httpRequest.onreadystatechange = superhero;
+            httpRequest.open('GET', url);
+            httpRequest.send();
+        });
+
+        function superhero() {
             if (httpRequest.readyState === XMLHttpRequest.DONE) {
                 if (httpRequest.status === 200) {
                     var response = httpRequest.responseText;
-                    alert(response);
+                    //$("#result").append(response);
+                    result.innerHTML = response;
+                    alert(response);            
                 } 
                 else {
                     console.log(httpRequest.status)
                     alert('There was a problem with the request.');
                 }
             }
-        }
-        
-        }); 
-   
-   });
+        }        
 
-
-
-/* window.addEventListener("load", addmessage);
-
-function addmessage() {
-    const btn = document.querySelector("form .btn");
-    btn.addEventListener("click", function(event) {
-    event.preventDefault();
-
-    msg = document.querySelector("#search").value;
-
-    if (msg == ""){
-        alert("Please enter a valid hero" + msg);
-    }
-    else{
-        alert("Thank You! Your email address " + msg);
-    }
-    //onsole.log("Nope.");
-    });
+    
 } */
