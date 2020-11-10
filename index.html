@@ -10,15 +10,29 @@
     <script src="app.js"></script>
   </head>
   <body>
-    <h1>Avengers <span>Character </span> Search</h1>
-    <div id="game">
-        <form action="#" method="GET">
-            <div class="form-group">
-                <input type="text" name="query" id="search" placeholder="Enter Character's Name">
-            </div>
-            <button type="submit" class="btn">Search</button>
-        </form>
-    </div>
-    <div id="result"></div>
+    <header>
+      <div  class = "container" id="pagename">
+        <h1>Avengers <span>Character </span> Search</h1>
+      </div>
+    </header>
+    <main>
+      <section>
+        <div id="game">
+          <form action="#" method="GET">
+              <div class="form-group">
+                  <label for="search">Search by Full Name or Alias</label>
+                  <input type="text" name="query" id="search" placeholder="Enter Character's Name">
+              </div>
+              <button type="submit" class="btn">Search</button>
+          </form>
+        </div>
+      </section>
+      <section>
+      <h1>Result</h1>
+      <hr>
+      <div id="result"></div>
+      </section>
+      
+    </main>
   </body>
 </html>

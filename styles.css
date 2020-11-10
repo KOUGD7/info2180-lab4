@@ -1,0 +1,70 @@
+body{
+    background-color:aliceblue;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+header .container{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    text-transform: uppercase;
+}
+
+main{
+    margin: 70px;
+}
+
+#search{
+    width: 100%;
+}
+
+.form-group{
+    display: inline-block;
+}
+
+input, label {
+    display:block;
+}
+
+#pagename{
+    background-color: #487ee0;
+    color: aliceblue;
+}
+
+.btn{
+    background-color: #d85a5a;
+    color: white;
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #d85a5a;
+    border-radius: 5px;
+}
+
+input[type=text], select {
+    padding: 10px;
+    margin-top: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#game{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-between;
+}
+
+form{
+    width: 100%;
+}
+
+.form-group{
+    padding: 20px;
+    width: 80%;
+}
