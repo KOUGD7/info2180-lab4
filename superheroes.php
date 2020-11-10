@@ -1,6 +1,7 @@
 <?php
-
 header("Access-Control-Allow-Origin: *");
+
+$query = $_GET['query'];
 
 $superheroes = [
   [
@@ -67,8 +68,37 @@ $superheroes = [
 
 ?>
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+<?php
+//if query is blank print list of superheroes
+if($query=="") {?>
+    <ul>
+    <?php foreach ($superheroes as $superhero): ?>
+    <li><?= $superhero['alias']; ?></li>
+    <?php endforeach; ?>
+    </ul>
+
+<?php
+}
+
+//iterate array and find superhero with alias matching query
+else {
+    $nofind = TRUE;
+    foreach ($superheroes as $superhero):
+        if ($superhero['alias'] == $query){ 
+            $nofind = FALSE ?> 
+
+            <h2><?= $superhero['alias']; ?></h2>
+            <h3>A.K.A <?=$superhero['name']; ?></h3>
+            <p><?=$superhero['biography']; ?></p>
+<?php 
+    }
+    endforeach; 
+    //if query entered is not in array result "not found"
+    if($nofind){
+?>
+        <h2 id="notfound">Superhero not found</h2>
+<?php        
+    }
+}
+?>
+

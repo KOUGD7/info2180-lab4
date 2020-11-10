@@ -15,6 +15,16 @@ h1{
     text-transform: uppercase;
 }
 
+h2, h3{
+    margin: 0;
+    padding: 0;
+}
+
+#notfound{
+    text-transform: uppercase;
+    color: #b43838;
+}
+
 main{
     margin: 70px;
 }
@@ -43,6 +53,7 @@ input, label {
     padding: 10px;
     border: 1px solid #d85a5a;
     border-radius: 5px;
+    font-weight: bold;
 }
 
 input[type=text], select {
