@@ -23,6 +23,8 @@ h2, h3{
 #notfound{
     text-transform: uppercase;
     color: #b43838;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 main{

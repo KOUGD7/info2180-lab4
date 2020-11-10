@@ -84,7 +84,7 @@ if($query=="") {?>
 else {
     $nofind = TRUE;
     foreach ($superheroes as $superhero):
-        if ($superhero['alias'] == $query){ 
+        if (strcasecmp($superhero['alias'], $query) == 0){
             $nofind = FALSE ?> 
 
             <h2><?= $superhero['alias']; ?></h2>
@@ -96,7 +96,7 @@ else {
     //if query entered is not in array result "not found"
     if($nofind){
 ?>
-        <h2 id="notfound">Superhero not found</h2>
+        <p id="notfound">Superhero not found</p>
 <?php        
     }
 }
